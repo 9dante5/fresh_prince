@@ -1,12 +1,12 @@
 
-// const user = JSON.parse(localStorage.getItem('user'));
+const user = JSON.parse(localStorage.getItem('user'));
 
 const boody = document.querySelector('body');
 
-// if (user.rol === 1) {
-// ADMIN: can edit all items
+if (user.rol === 1) {
+    // ADMIN: can edit all items
 
-const editButtonHTML = `
+    const editButtonHTML = `
     <div class='edit__button'>
         <figure>
             <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 50 50' width='50px' height='50px'>
@@ -16,12 +16,12 @@ const editButtonHTML = `
         </figure>
     </div>
     `;
-boody.innerHTML += editButtonHTML;
+    boody.innerHTML += editButtonHTML;
 
-const editButton = document.querySelector('.edit__button');
-editButton.addEventListener('click', () => {
+    const editButton = document.querySelector('.edit__button');
+    editButton.addEventListener('click', () => {
 
-    const editModalHTML = `
+        const editModalHTML = `
         <div class='edit__modal'>
             <form>
             <button class='close__modal'>X</button>
@@ -44,63 +44,149 @@ editButton.addEventListener('click', () => {
         </div>
         `;
 
-    boody.innerHTML += editModalHTML;
+        boody.innerHTML += editModalHTML;
 
 
-    const addMore = document.getElementById('add-more');
-    const deleteImage = document.getElementById('remove');
-    const modalImages = document.querySelector('.edit__modal__images');
+        const addMore = document.getElementById('add-more');
+        const deleteImage = document.getElementById('remove');
+        const modalImages = document.querySelector('.edit__modal__images');
 
-    addMore.addEventListener('click', () => {
-        const input = document.createElement('input');
-        input.type = 'text';
-        input.placeholder = 'Link to image';
-        input.id = 'link_image';
-        modalImages.appendChild(input);
-        deleteImage.style.display = 'flex';
+        addMore.addEventListener('click', () => {
+            const input = document.createElement('input');
+            input.type = 'text';
+            input.placeholder = 'Link to image';
+            input.id = 'link_image';
+            modalImages.appendChild(input);
+            deleteImage.style.display = 'flex';
+        });
+
+        deleteImage.addEventListener('click', () => {
+            const input = document.querySelector('#link_image');
+            input.remove();
+        });
+
+
+        const deleteItem = document.getElementById('delete');
+
+        deleteItem.addEventListener('click', () => {
+            fetch('http://localhost:3000/productos', {
+                method: 'DELETE',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(item),
+            })
+                .then((response) => response.json())
+                .then((data) => {
+                    console.log('Success:', data);
+                })
+                .catch((error) => {
+                    console.error('Error:', error);
+                });
+            console.log('delete item');
+        });
+
+
+
+
+
+        const close = document.querySelector('.close__modal');
+        close.addEventListener('click', () => {
+            const editModal = document.querySelector('.edit__modal');
+            editModal.remove();
+            window.location.reload();
+
+        });
+
+        const save = document.querySelector('.submit__modal');
+
+        save.addEventListener('click', (e) => {
+
+            e.preventDefault();
+
+            const name = document.getElementById('name').value;
+            const price = document.getElementById('price').value;
+            const description = document.getElementById('description').value;
+            const images = document.querySelectorAll('#link_image');
+
+            const imagesArray = [];
+            images.forEach((image) => {
+                imagesArray.push(image.value);
+            });
+
+            const item = {
+                name,
+                price,
+                description,
+                images: imagesArray,
+            };
+
+            console.log(item);
+
+            // send item data to server
+            fetch('http://localhost:3000/items', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(item),
+            })
+                .then((response) => response.json())
+                .then((data) => {
+                    console.log('Success:', data);
+                })
+                .catch((error) => {
+                    console.error('Error:', error);
+                });
+
+            // Recargar pagina
+            window.location.reload(); 
+
+        });
+
+
+
     });
 
-    deleteImage.addEventListener('click', () => {
-        const input = document.querySelector('#link_image');
-        input.remove();
+    const addProduct = document.querySelector('.add-product_button');
+
+    const ModalAddProductHTML = `   
+<div class='add-product__modal'>
+    <form>
+    <button class='close__modal'>X</button>
+    <h2>Add Item</h2>
+        <input type='text' placeholder='Name' id="name" />
+        <input type='number' placeholder='Price' id="price"/>
+        <input type='text' placeholder='Description' id="description"/>
+        <div class='edit__modal__images'>
+            <input type='text' placeholder='Link to image' id="link_image"/>
+        </div>
+        <div class="actions">
+            <div> 
+                <div id ='add-more' >+</div>
+                <div id ='remove' >-</div>
+            </div>
+            <div id ='delete' >Eliminar</div>
+        </div>
+        <button type='submit' class="submit__modal" >Save</button>
+    </form>
+</div>
+`;
+    addProduct.addEventListener('click', () => {
+        boody.innerHTML += ModalAddProductHTML;
     });
 
-
-    const deleteItem = document.getElementById('delete');
-
-    deleteItem.addEventListener('click', () => {
-        // fetch('http://localhost:3000/items', {
-        //     method: 'DELETE',
-        //     headers: {
-        //         'Content-Type': 'application/json',
-        //     },
-        //     body: JSON.stringify(item),
-        // })
-        //     .then((response) => response.json())
-        //     .then((data) => {
-        //         console.log('Success:', data);
-        //     })
-        //     .catch((error) => {
-        //         console.error('Error:', error);
-        //     });
-        console.log('delete item');
-    });
-
-
-
-
-
-    const close = document.querySelector('.close__modal');
-    close.addEventListener('click', () => {
-        const editModal = document.querySelector('.edit__modal');
-        editModal.remove();
+    const closeAddProduct = document.querySelector('.close__modal');
+    closeAddProduct.addEventListener('click', () => {
+        const addProduct = document.querySelector('.add-product__modal');
+        addProduct.remove();
         window.location.reload();
-
     });
 
-    const save = document.querySelector('.submit__modal');
+    const saveAddProduct = document.querySelector('.submit__modal');
 
-    save.addEventListener('click', (e) => {
+
+    saveAddProduct.addEventListener('click', (e) => {
 
         e.preventDefault();
 
@@ -124,73 +210,33 @@ editButton.addEventListener('click', () => {
         console.log(item);
 
         // send item data to server
-        // fetch('http://localhost:3000/items', {
-        //     method: 'POST',
-        //     headers: {
-        //         'Content-Type': 'application/json',
-        //     },
-        //     body: JSON.stringify(item),
-        // })
-        //     .then((response) => response.json())
-        //     .then((data) => {
-        //         console.log('Success:', data);
-        //     })
-        //     .catch((error) => {
-        //         console.error('Error:', error);
-        //     });
+        fetch('http://localhost:3000/items', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(item),
+        })
+            .then((response) => response.json())
+            .then((data) => {
+                console.log('Success:', data);
+            })
+            .catch((error) => {
+                console.error('Error:', error);
+            });
 
         // Recargar pagina
-        // window.location.reload(); 
+        window.location.reload(); 
 
-    });
+    }
 
-
-
-});
-
-const addProduct = document.querySelector('.add-product_button');
-
-const ModalAddProductHTML = `   
-<div class='add-product__modal'>
-    <form>
-    <button class='close__modal'>X</button>
-    <h2>Add Item</h2>
-        <input type='text' placeholder='Name' id="name" />
-        <input type='number' placeholder='Price' id="price"/>
-        <input type='text' placeholder='Description' id="description"/>
-        <div class='edit__modal__images'>
-            <input type='text' placeholder='Link to image' id="link_image"/>
-        </div>
-        <div class="actions">
-            <div> 
-                <div id ='add-more' >+</div>
-                <div id ='remove' >-</div>
-            </div>
-            <div id ='delete' >Eliminar</div>
-        </div>
-        <button type='submit' class="submit__modal" >Save</button>
-    </form>
-</div>
-`;
-addProduct.addEventListener('click', () => {
-    boody.innerHTML += ModalAddProductHTML;
-});
-
-const closeAddProduct = document.querySelector('.close__modal');
-closeAddProduct.addEventListener('click', () => {
-    const addProduct = document.querySelector('.add-product__modal');
-    addProduct.remove();
-    window.location.reload();
-});
-
-const saveAddProduct = document.querySelector('.submit__modal');
+    );
 
 
 
 
 
-
-// } else {
-//     // USER: cant edit nothing
-// }
+} else {
+    //     // USER: cant edit nothing
+}
 

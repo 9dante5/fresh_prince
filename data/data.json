@@ -1,50 +1,46 @@
 {
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 309f5d53670c618419cc42d670fc2c55cb35b4d6
-    "productos":[
-        {
-            "id":1,
-            "nombre":"Sweter 1",
-            "coleccion":"primavera",
-            "descripcion":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam a erat ullamcorper, consequat sapien sit amet, lobortis diam. Suspendisse potenti. Donec tincidunt, magna sed hendrerit laoreet, nibh justo euismod nibh.",
-            "precio":150000,
-            "imgfrente":"https://res.cloudinary.com/dg2wmqkks/image/upload/v1722869502/ropa/busp1front.png",
-            "imgrespaldo":"https://res.cloudinary.com/dg2wmqkks/image/upload/v1722869504/ropa/buso1.png",
-            "imgmodelo":"https://res.cloudinary.com/dg2wmqkks/image/upload/v1722869504/ropa/buso1.png"
-        },
-        {
-            "id":2,
-            "nombre":"Sweter 2",
-            "coleccion":"otoño",
-            "descripcion":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam a erat ullamcorper, consequat sapien sit amet, lobortis diam. Suspendisse potenti. Donec tincidunt, magna sed hendrerit laoreet, nibh justo euismod nibh.",
-            "precio":125000,
-            "imgfrente":"https://res.cloudinary.com/dg2wmqkks/image/upload/v1722869503/ropa/buso2front.png",
-            "imgrespaldo":"https://res.cloudinary.com/dg2wmqkks/image/upload/v1722869504/ropa/buso2rev.png",
-            "imgmodelo":"https://res.cloudinary.com/dg2wmqkks/image/upload/v1722869503/ropa/buso2model.png"
-        },
-        {
-            "id":3,
-            "nombre":"Sweter 3",
-            "coleccion":"verano",
-            "descripcion":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam a erat ullamcorper, consequat sapien sit amet, lobortis diam. Suspendisse potenti. Donec tincidunt, magna sed hendrerit laoreet, nibh justo euismod nibh.",
-            "precio":132000,
-            "imgfrente":"https://res.cloudinary.com/dg2wmqkks/image/upload/v1722869502/ropa/buso4model.png",
-            "imgrespaldo":"https://res.cloudinary.com/dg2wmqkks/image/upload/v1722869503/ropa/buso4back.png",
-            "imgmodelo":"https://res.cloudinary.com/dg2wmqkks/image/upload/v1722869503/ropa/buso4front.png"
-        },
-        {
-            "id":4,
-            "nombre":"Sweter 4",
-            "coleccion":"invierno",
-            "descripcion":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam a erat ullamcorper, consequat sapien sit amet, lobortis diam. Suspendisse potenti. Donec tincidunt, magna sed hendrerit laoreet, nibh justo euismod nibh.",
-            "precio":95000,
-            "imgfrente":"https://res.cloudinary.com/dg2wmqkks/image/upload/v1722869502/ropa/buso3front.png",
-            "imgrespaldo":"https://res.cloudinary.com/dg2wmqkks/image/upload/v1722869502/ropa/buso3back.png",
-            "imgmodelo":"https://res.cloudinary.com/dg2wmqkks/image/upload/v1722869504/ropa/buso3model.png"
-        }
-    ]
+  "productos": [
+    {
+      "id": 1,
+      "nombre": "Sweter 1",
+      "coleccion": "primavera",
+      "descripcion": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam a erat ullamcorper, consequat sapien sit amet, lobortis diam. Suspendisse potenti. Donec tincidunt, magna sed hendrerit laoreet, nibh justo euismod nibh.",
+      "precio": 150000,
+      "imgfrente": "https://res.cloudinary.com/dg2wmqkks/image/upload/v1722869502/ropa/busp1front.png",
+      "imgrespaldo": "https://res.cloudinary.com/dg2wmqkks/image/upload/v1722869504/ropa/buso1.png",
+      "imgmodelo": "https://res.cloudinary.com/dg2wmqkks/image/upload/v1722869504/ropa/buso1.png"
+    },
+    {
+      "id": 2,
+      "nombre": "Sweter 2",
+      "coleccion": "otoño",
+      "descripcion": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam a erat ullamcorper, consequat sapien sit amet, lobortis diam. Suspendisse potenti. Donec tincidunt, magna sed hendrerit laoreet, nibh justo euismod nibh.",
+      "precio": 125000,
+      "imgfrente": "https://res.cloudinary.com/dg2wmqkks/image/upload/v1722869503/ropa/buso2front.png",
+      "imgrespaldo": "https://res.cloudinary.com/dg2wmqkks/image/upload/v1722869504/ropa/buso2rev.png",
+      "imgmodelo": "https://res.cloudinary.com/dg2wmqkks/image/upload/v1722869503/ropa/buso2model.png"
+    },
+    {
+      "id": 3,
+      "nombre": "Sweter 3",
+      "coleccion": "verano",
+      "descripcion": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam a erat ullamcorper, consequat sapien sit amet, lobortis diam. Suspendisse potenti. Donec tincidunt, magna sed hendrerit laoreet, nibh justo euismod nibh.",
+      "precio": 132000,
+      "imgfrente": "https://res.cloudinary.com/dg2wmqkks/image/upload/v1722869502/ropa/buso4model.png",
+      "imgrespaldo": "https://res.cloudinary.com/dg2wmqkks/image/upload/v1722869503/ropa/buso4back.png",
+      "imgmodelo": "https://res.cloudinary.com/dg2wmqkks/image/upload/v1722869503/ropa/buso4front.png"
+    },
+    {
+      "id": 4,
+      "nombre": "Sweter 4",
+      "coleccion": "invierno",
+      "descripcion": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam a erat ullamcorper, consequat sapien sit amet, lobortis diam. Suspendisse potenti. Donec tincidunt, magna sed hendrerit laoreet, nibh justo euismod nibh.",
+      "precio": 95000,
+      "imgfrente": "https://res.cloudinary.com/dg2wmqkks/image/upload/v1722869502/ropa/buso3front.png",
+      "imgrespaldo": "https://res.cloudinary.com/dg2wmqkks/image/upload/v1722869502/ropa/buso3back.png",
+      "imgmodelo": "https://res.cloudinary.com/dg2wmqkks/image/upload/v1722869504/ropa/buso3model.png"
+    }
+  ]
 <<<<<<< HEAD
 =======
   "usuarios": [
@@ -59,7 +55,4 @@
       "email": "juan@gmail.com"
     }
   ]
->>>>>>> 51d2704616328d525943bf3e82cf224b86a0c5de
-=======
->>>>>>> 309f5d53670c618419cc42d670fc2c55cb35b4d6
 }
