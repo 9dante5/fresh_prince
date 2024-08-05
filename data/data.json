@@ -1,5 +1,8 @@
 {
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 309f5d53670c618419cc42d670fc2c55cb35b4d6
     "productos":[
         {
             "id":1,
@@ -42,6 +45,7 @@
             "imgmodelo":"https://res.cloudinary.com/dg2wmqkks/image/upload/v1722869504/ropa/buso3model.png"
         }
     ]
+<<<<<<< HEAD
 =======
   "usuarios": [
     {
@@ -56,4 +60,6 @@
     }
   ]
 >>>>>>> 51d2704616328d525943bf3e82cf224b86a0c5de
+=======
+>>>>>>> 309f5d53670c618419cc42d670fc2c55cb35b4d6
 }
