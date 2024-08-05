@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Carrito de Compras</title>
+  <link rel="stylesheet" href="../styles/carrito.css">
+</head>
+<body>
+  <button id="cart-button">Carrito (0)</button>
+
+  <!-- Modal del carrito -->
+  <div id="cart-modal" class="modal">
+    <div class="modal-content">
+      <span class="close-btn">&times;</span>
+      <h2>Carrito de Compras</h2>
+      <ul id="items-list"></ul>
+      <button id="pay-button">Pagar</button>
+    </div>
+  </div>
+
+  <!-- Modal de pago -->
+  <div id="payment-modal" class="modal">
+    <div class="modal-content">
+      <span class="close-btn">&times;</span>
+      <h2>Formulario de Pago</h2>
+      <form id="payment-form">
+        <label for="card-name">Nombre en la Tarjeta:</label>
+        <input type="text" id="card-name" name="card-name" required><br><br>
+        <label for="card-number">Número de Tarjeta:</label>
+        <input type="text" id="card-number" name="card-number" required><br><br>
+        <label for="expiry-date">Fecha de Expiración:</label>
+        <input type="text" id="expiry-date" name="expiry-date" required><br><br>
+        <label for="cvv">CVV:</label>
+        <input type="text" id="cvv" name="cvv" required><br><br>
+        <button type="submit">Enviar Pago</button>
+      </form>
+      <button id="cancel-payment">Cancelar</button>
+    </div>
+  </div>
+
+  <script src="../scripts/carrito.js"></script>
+</body>
+</html>

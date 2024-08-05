@@ -1,0 +1,1 @@
+export const usuarios = "http://localhost:3000/usuarios";
