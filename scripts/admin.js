@@ -16,7 +16,6 @@ const editButtonHTML = `
         </figure>
     </div>
     `;
-
 boody.innerHTML += editButtonHTML;
 
 const editButton = document.querySelector('.edit__button');
@@ -33,7 +32,13 @@ editButton.addEventListener('click', () => {
                 <div class='edit__modal__images'>
                     <input type='text' placeholder='Link to image' id="link_image"/>
                 </div>
-                <div id ='add-more' >+</div>
+                <div class="actions">
+                    <div> 
+                        <div id ='add-more' >+</div>
+                        <div id ='remove' >-</div>
+                    </div>
+                    <div id ='delete' >Eliminar</div>
+                </div>
                 <button type='submit' class="submit__modal" >Save</button>
             </form>
         </div>
@@ -43,6 +48,7 @@ editButton.addEventListener('click', () => {
 
 
     const addMore = document.getElementById('add-more');
+    const deleteImage = document.getElementById('remove');
     const modalImages = document.querySelector('.edit__modal__images');
 
     addMore.addEventListener('click', () => {
@@ -51,8 +57,36 @@ editButton.addEventListener('click', () => {
         input.placeholder = 'Link to image';
         input.id = 'link_image';
         modalImages.appendChild(input);
-        console.log('add more');
+        deleteImage.style.display = 'flex';
     });
+
+    deleteImage.addEventListener('click', () => {
+        const input = document.querySelector('#link_image');
+        input.remove();
+    });
+
+
+    const deleteItem = document.getElementById('delete');
+
+    deleteItem.addEventListener('click', () => {
+        // fetch('http://localhost:3000/items', {
+        //     method: 'DELETE',
+        //     headers: {
+        //         'Content-Type': 'application/json',
+        //     },
+        //     body: JSON.stringify(item),
+        // })
+        //     .then((response) => response.json())
+        //     .then((data) => {
+        //         console.log('Success:', data);
+        //     })
+        //     .catch((error) => {
+        //         console.error('Error:', error);
+        //     });
+        console.log('delete item');
+    });
+
+
 
 
 
@@ -60,6 +94,8 @@ editButton.addEventListener('click', () => {
     close.addEventListener('click', () => {
         const editModal = document.querySelector('.edit__modal');
         editModal.remove();
+        window.location.reload(); 
+
     });
 
     const save = document.querySelector('.submit__modal');
