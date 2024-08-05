@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
     "productos":[
         {
             "id":1,
@@ -41,4 +42,18 @@
             "imgmodelo":"https://res.cloudinary.com/dg2wmqkks/image/upload/v1722869504/ropa/buso3model.png"
         }
     ]
+=======
+  "usuarios": [
+    {
+      "id": "6a4e",
+      "name": "andres",
+      "email": "andresepb_30@gmail.com"
+    },
+    {
+      "id": "5364",
+      "name": "juan",
+      "email": "juan@gmail.com"
+    }
+  ]
+>>>>>>> 51d2704616328d525943bf3e82cf224b86a0c5de
 }
