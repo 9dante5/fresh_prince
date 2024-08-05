@@ -1,0 +1,340 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #ffff;
+}
+
+.body-admin {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    height: 82px;
+    background-color: #fff;
+    width: 100%;
+    max-width: 1400px;
+    color: #000;
+}
+
+header h1 {
+    font-size: 1.5rem;
+}
+
+header a {
+    color: #000;
+    text-decoration: none;
+}
+
+header li {
+    list-style: none;
+    display: inline;
+    margin-left: 20px;
+}
+
+header a:hover {
+    text-decoration: underline;
+}
+
+.main_admin {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+    width: 100%;
+    padding: 20px;
+    margin-top: 20px;
+    max-width: 1400px;
+
+}
+
+
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table, th, td {
+    border: 1px solid black;
+}
+
+th, td {
+    padding: 15px;
+    text-align: left;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+tr:nth-child(odd) {
+    background-color: #f1f1f1;
+}
+
+.button {
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+.button2 {
+    background-color: #008CBA;
+}
+
+/* Blue */
+
+.button3 {
+    background-color: #f44336;
+}
+
+.add-product {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 100%;
+    height: 100px;
+    gap: 20px;
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+
+.add-product button {
+    position: relative;
+    background-color: #4CAF50;
+    border-radius: 50%;
+    height: 40px;
+    width: 40px;
+    color: #fff;
+    outline: none;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+    cursor: pointer
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.edit__button {
+    position: fixed;
+    background-color: gray;
+    color: white;
+    border: none;
+    cursor: pointer;
+    top: 60px;
+    right: 60px;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: .15s all;
+    border-radius: 50%;
+
+    svg {
+        width: 30px;
+        transition: .15s all;
+        height: 30px;
+    }
+
+    &:hover {
+        background-color: #333;
+        fill: white;
+        transition: .15s all;
+    }
+}
+
+.edit__modal, .add-product__modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.edit__modal form, .add-product__modal form {
+    position: relative;
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    text-align: left;
+    width: 80%;
+    max-width: 600px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.edit__modal__images, .add-product__modal__images {
+    width: 100%;
+}
+
+.edit__modal form input,
+.add-product__modal form input {
+    width: 95%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.edit__modal form .submit__modal,
+.add-product__modal form .submit__modal {
+    padding: 10px;
+    border: none;
+    background-color: gray;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+    width: 100%;
+    transition: .15s all;
+}
+
+
+.edit__modal form .submit__modal:hover,
+.add-product__modal form .submit__modal:hover {
+    background-color: #333;
+    transition: .15s all;
+}
+
+.edit__modal form :is(#add-more, #remove),
+.add-product__modal form :is(#add-more, #remove) {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    background-color: gray;
+    color: white;
+    border: none;
+    display: flex;
+    outline: none;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: .15s all;
+    margin-bottom: 10px;
+}
+
+.edit__modal form #remove,
+.add-product__modal form #remove {
+    display: none;
+}
+
+.edit__modal form #add-more:hover,
+.add-product__modal form #add-more:hover {
+    transition: .15s all;
+    background-color: #4276fb;
+}
+
+.edit__modal form #remove:hover,
+.add-product__modal form #remove:hover {
+    transition: .15s all;
+    background-color: #fd3838;
+    -webkit-transition: .15s all;
+    -moz-transition: .15s all;
+    -ms-transition: .15s all;
+    -o-transition: .15s all;
+}
+
+.actions div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.close__modal {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    color: #333;
+    transition: .15s all;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    outline: none;
+    border: none;
+    font-weight: bold;
+
+    &:hover {
+        background-color: #ccc;
+        transition: .15s all;
+    }
+}
+
+#delete {
+    cursor: pointer;
+    color: #fff;
+    transition: .15s all;
+    height: 40px;
+    width: auto;
+    padding: 5px 10px;
+    border-radius: 5px;
+    background-color: #fc5050;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    outline: none;
+    border: none;
+    font-weight: bold;
+
+    &:hover {
+        background-color: #f71616;
+        transition: .15s all;
+    }
+}
+
+.actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+    width: 100%;
+}
