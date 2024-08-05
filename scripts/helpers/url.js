@@ -1,0 +1,1 @@
+export const productos = "http://localhost:3000/productos"
