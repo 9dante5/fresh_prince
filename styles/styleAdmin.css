@@ -134,7 +134,9 @@ tr:nth-child(odd) {
     justify-content: center;
     align-items: center;
     font-size: 16px;
+    cursor: pointer
 }
+
 
 
 
@@ -177,7 +179,7 @@ tr:nth-child(odd) {
     }
 }
 
-.edit__modal {
+.edit__modal, .add-product__modal {
     position: fixed;
     top: 0;
     left: 0;
@@ -190,7 +192,7 @@ tr:nth-child(odd) {
     z-index: 1000;
 }
 
-.edit__modal form {
+.edit__modal form, .add-product__modal form {
     position: relative;
     background-color: white;
     padding: 30px;
@@ -205,11 +207,12 @@ tr:nth-child(odd) {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
-.edit__modal__images {
+.edit__modal__images, .add-product__modal__images {
     width: 100%;
 }
 
-.edit__modal form input {
+.edit__modal form input,
+.add-product__modal form input {
     width: 95%;
     padding: 10px;
     margin-bottom: 10px;
@@ -217,7 +220,8 @@ tr:nth-child(odd) {
     border-radius: 5px;
 }
 
-.edit__modal form .submit__modal {
+.edit__modal form .submit__modal,
+.add-product__modal form .submit__modal {
     padding: 10px;
     border: none;
     background-color: gray;
@@ -229,12 +233,14 @@ tr:nth-child(odd) {
 }
 
 
-.edit__modal form .submit__modal:hover {
+.edit__modal form .submit__modal:hover,
+.add-product__modal form .submit__modal:hover {
     background-color: #333;
     transition: .15s all;
 }
 
-.edit__modal form :is(#add-more, #remove) {
+.edit__modal form :is(#add-more, #remove),
+.add-product__modal form :is(#add-more, #remove) {
     width: 40px;
     height: 40px;
     border-radius: 50%;
@@ -255,16 +261,19 @@ tr:nth-child(odd) {
     margin-bottom: 10px;
 }
 
-.edit__modal form #remove {
+.edit__modal form #remove,
+.add-product__modal form #remove {
     display: none;
 }
 
-.edit__modal form #add-more:hover {
+.edit__modal form #add-more:hover,
+.add-product__modal form #add-more:hover {
     transition: .15s all;
     background-color: #4276fb;
 }
 
-.edit__modal form #remove:hover {
+.edit__modal form #remove:hover,
+.add-product__modal form #remove:hover {
     transition: .15s all;
     background-color: #fd3838;
     -webkit-transition: .15s all;

@@ -94,7 +94,7 @@ editButton.addEventListener('click', () => {
     close.addEventListener('click', () => {
         const editModal = document.querySelector('.edit__modal');
         editModal.remove();
-        window.location.reload(); 
+        window.location.reload();
 
     });
 
@@ -146,15 +146,44 @@ editButton.addEventListener('click', () => {
 
 
 
-
-
-    // get item id
-
-    // fetch item data
-    // fill edit form
-    // send updated data
-
 });
+
+const addProduct = document.querySelector('.add-product_button');
+
+const ModalAddProductHTML = `   
+<div class='add-product__modal'>
+    <form>
+    <button class='close__modal'>X</button>
+    <h2>Add Item</h2>
+        <input type='text' placeholder='Name' id="name" />
+        <input type='number' placeholder='Price' id="price"/>
+        <input type='text' placeholder='Description' id="description"/>
+        <div class='edit__modal__images'>
+            <input type='text' placeholder='Link to image' id="link_image"/>
+        </div>
+        <div class="actions">
+            <div> 
+                <div id ='add-more' >+</div>
+                <div id ='remove' >-</div>
+            </div>
+            <div id ='delete' >Eliminar</div>
+        </div>
+        <button type='submit' class="submit__modal" >Save</button>
+    </form>
+</div>
+`;
+addProduct.addEventListener('click', () => {
+    boody.innerHTML += ModalAddProductHTML;
+});
+
+const closeAddProduct = document.querySelector('.close__modal');
+closeAddProduct.addEventListener('click', () => {
+    const addProduct = document.querySelector('.add-product__modal');
+    addProduct.remove();
+    window.location.reload();
+});
+
+const saveAddProduct = document.querySelector('.submit__modal');
 
 
 
